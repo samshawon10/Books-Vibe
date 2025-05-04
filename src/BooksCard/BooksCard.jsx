@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const BooksCard = ({ book }) => {
   const {
+    bookId,
     bookName,
     author,
     image,
@@ -12,7 +14,8 @@ const BooksCard = ({ book }) => {
   } = book;
 
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-5 border border-gray-100 flex flex-col justify-between">
+    <Link to={`/books/${bookId}`} className="block p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-5 border border-gray-100 flex flex-col justify-between">
       <div className="flex justify-center items-center bg-gray-100 p-4 rounded-xl mb-4">
         <img
           src={image}
@@ -43,6 +46,7 @@ const BooksCard = ({ book }) => {
         </span>
       </div>
     </div>
+    </Link>
   );
 };
 
