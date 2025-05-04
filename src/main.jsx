@@ -11,6 +11,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import BooksDetails from './BookDetails/BooksDetails'
+import ListedBook from './ListedBook/ListedBook';
+import PageToRead from './PageToRead/PageToRead';
 
 
 
@@ -29,27 +31,20 @@ const router = createBrowserRouter([
         element:<BooksDetails></BooksDetails>,
         loader: () => fetch('/public/booksData.json'),
       },
-    // {
-    //   path:"/listedbooks" ,
-    //   element: <ListedBooks></ListedBooks>,
-    //   loader: () => fetch('/public/booksData.json'),
-    // },
-    {
-      path: "/ListedBooks/:id",
-      element: <h2 className="text-5xl">This is Listed Books</h2>
-    },
-    {
-      path: "/ListedBooks/:id/:name",
-      element: <h2 className="text-5xl">This is Listed Books</h2>
-    },
-    {
-      path: "/ListedBooks/:id/:name/:author",
-      element: <h2 className="text-5xl">This is Listed Books</h2>
-    },
+      {
+        path: "/listedbooks",
+        element: <ListedBook></ListedBook>,
+        loader: () => fetch('/booksData.json'),
+       
+      },
+  
+   
     {
       path: "/PagetoRead",
-      element: <h2 className="text-5xl">This is Pages to Read</h2>
-    }
+      element: <PageToRead></PageToRead>,
+    },
+
+
     ]},
 ]);
 

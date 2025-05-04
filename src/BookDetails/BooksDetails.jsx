@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useLoaderData } from 'react-router-dom';
 
 const BooksDetails = () => {
@@ -6,6 +6,30 @@ const BooksDetails = () => {
   const data = useLoaderData();
   const id = parseInt(bookId);
   const book = data.find((book) => book.bookId === id);
+  
+  const [isReadAdded, setIsReadAdded] = useState(false);
+  const [isWishlistAdded, setIsWishlistAdded] = useState(false);
+
+  useEffect(() => {
+    const read = JSON.parse(localStorage.getItem('readBooks')) || [];
+    const wishlist = JSON.parse(localStorage.getItem('wishlistBooks')) || [];
+    setIsReadAdded(read.some((b) => b.bookId === book.bookId));
+    setIsWishlistAdded(wishlist.some((b) => b.bookId === book.bookId));
+  }, [book.bookId]);
+
+  const handleAddToLocalStorage = (type) => {
+    const key = type === 'read' ? 'readBooks' : 'wishlistBooks';
+    const existing = JSON.parse(localStorage.getItem(key)) || [];
+
+    const alreadyAdded = existing.some((b) => b.bookId === book.bookId);
+    if (!alreadyAdded) {
+      localStorage.setItem(key, JSON.stringify([...existing, book]));
+      if (type === 'read') setIsReadAdded(true);
+      else setIsWishlistAdded(true);
+    }
+  };
+
+  if (!book) return <p>Book not found.</p>;
 
   if (!book) return <p>Book not found.</p>;
 
@@ -22,8 +46,10 @@ const BooksDetails = () => {
     rating
   } = book;
 
+  
   return (
     <>
+    <div className="container mx-auto my-20">
       {/* Inline animation style */}
       <style>{`
         @keyframes fadeInUp {
@@ -94,18 +120,32 @@ const BooksDetails = () => {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-6">
-            <button
-              className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-md font-semibold shadow transform transition-transform duration-200 hover:scale-105 hover:opacity-90"
+          <button
+              onClick={() => handleAddToLocalStorage('read')}
+              disabled={isReadAdded}
+              className={`px-6 py-2 rounded-md font-semibold shadow text-white ${
+                isReadAdded
+                  ? 'bg-gray-300 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-105 hover:opacity-90'
+              }`}
             >
-              Read
+              {isReadAdded ? 'Already in Read' : 'Read'}
             </button>
+
             <button
-              className="bg-gradient-to-r from-sky-300 to-blue-400 text-white px-6 py-2 rounded-md font-semibold shadow transform transition-transform duration-200 hover:scale-105 hover:opacity-90"
+              onClick={() => handleAddToLocalStorage('wishlist')}
+              disabled={isWishlistAdded}
+              className={`px-6 py-2 rounded-md font-semibold shadow text-white ${
+                isWishlistAdded
+                  ? 'bg-gray-300 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-sky-300 to-blue-400 hover:scale-105 hover:opacity-90'
+              }`}
             >
-              Wishlist
+              {isWishlistAdded ? 'Already in Wishlist' : 'Wishlist'}
             </button>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
