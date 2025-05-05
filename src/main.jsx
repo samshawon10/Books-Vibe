@@ -13,6 +13,7 @@ import {
 import BooksDetails from './BookDetails/BooksDetails'
 import ListedBook from './ListedBook/ListedBook';
 import PageToRead from './PageToRead/PageToRead';
+import Books from './Books/Books'
 
 
 
@@ -43,7 +44,10 @@ const router = createBrowserRouter([
       path: "/PagetoRead",
       element: <PageToRead></PageToRead>,
     },
-
+    {
+      path: "/books",
+      element: <Books></Books>,
+    },
 
     ]},
 ]);
