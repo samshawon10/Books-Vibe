@@ -77,10 +77,10 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} <span className="text-yellow-300 font-bold">Books Vibe</span>. All rights reserved.
         </p>
         <div className="flex gap-4 mt-4 md:mt-0 text-xl">
-          <a href="#" className="hover:text-yellow-300"><FaFacebook /></a>
-          <a href="#" className="hover:text-yellow-300"><FaTwitter /></a>
-          <a href="#" className="hover:text-yellow-300"><FaInstagram /></a>
-          <a href="#" className="hover:text-yellow-300"><FaLinkedin /></a>
+          <a href="https://www.facebook.com/sam.shawon.akando/" className="hover:text-yellow-300"><FaFacebook /></a>
+          <a href="https://x.com/SamShawon10" className="hover:text-yellow-300"><FaTwitter /></a>
+          <a href="https://www.instagram.com/samshawon10/" className="hover:text-yellow-300"><FaInstagram /></a>
+          <a href="https://www.linkedin.com/in/shawon-akando/" className="hover:text-yellow-300"><FaLinkedin /></a>
         </div>
         <p className="text-sm mt-4 md:mt-0 italic text-right text-pink-200">Crafted with ❤️ by <span className="font-bold text-white">Sam Shawon</span></p>
       </div>
