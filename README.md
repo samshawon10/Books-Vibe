@@ -1,13 +1,47 @@
-# React + Vite
+# BookVibe 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BookVibe is a modern web application for book enthusiasts, providing a platform to explore, read, and add books to a wishlist. Built using the MERN stack, it offers a seamless and interactive user experience.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live version of the application here: [BookVibe](https://bookvibe-sv.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Books-Vibe
+## 🚀 Features
+
+* Explore a wide range of books.
+* View book details with descriptions and author information.
+* Add books to a personal reading list.
+* Save favorite books to a wishlist.
+---
+
+## 🛠️ Technologies Used
+
+* **Frontend:** React.js, Tailwind CSS
+* **Deployment:** Netlify
+
+---
+
+## ✅ Usage
+
+* Browse books and view details.
+* Add books to your reading list or wishlist.
+* Remove books from the reading list or wishlist.
+
+---
+
+## 📧 Contact
+
+Developed by Sam Shawon.
+Feel free to reach out via [Email](mailto:samshawon518@gmail.com).
+
+---
+
+## 🌟 Acknowledgements
+
+* React.js
+* Tailwind CSS
+* Netlify
+
+Happy Reading! 📖😊
