@@ -42,6 +42,9 @@ Feel free to reach out via [Email](mailto:samshawon518@gmail.com).
 
 * React.js
 * Tailwind CSS
+* React Routing
+* DaisyUi
+* Javascript
 * Netlify
 
 Happy Reading! 📖😊
